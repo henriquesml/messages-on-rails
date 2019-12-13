@@ -1,7 +1,7 @@
 <%= content_for :title do %>
   Contacts
 <% end %>
-
+ 
 <div class="columns is-multiline is-paddingless">
   <% @contacts.each do |contact| %>
     <div class="column is-12">
@@ -25,3 +25,7 @@
     </div>
   <% end %>
 </div>
+ 
+<%= link_to new_contact_path, class: "button is-success fab-button" do %>
+  <i class="fas fa-plus has-text-write-text"></i>
+<% end %>
