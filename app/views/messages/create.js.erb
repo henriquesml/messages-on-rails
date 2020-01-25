@@ -1,0 +1,12 @@
+document.querySelect("textarea[name='message[content]']").classList.remove('is-danger')
+
+<% if @message.valid?%>
+
+    messageContainer = document.querySelect("div.message-container")
+    messageContainer.innerHTML += "<%= j render("messages/message", message: @message) %>"
+    messageContainer.scrollIntoView(false)
+
+    document.querySelect("textarea[name='message[content]']").value = ''
+<% else %>
+    document.querySelect("textarea[name='message[content]']").classList.add('is-danger')
+<%end%>
